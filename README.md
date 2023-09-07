@@ -1,11 +1,13 @@
 ## intro
 gpu硬解正常,能睡眠(显示器是关了的,但是没确定是否真的睡眠)&唤醒
+配置参考[知乎 M1 Max Mac Studio 同等性能配置](https://zhuanlan.zhihu.com/p/580506404)
 
 1. [opencore config.plist checker](https://sanitychecker.ocutils.me/)
 2. open core 启动选择系统界面，按`space`可以选择external U盘，引导
 3. 需要对想要安装macos的磁盘空间使用diskgenius格式化为APFS（uuid，gpt）
 4. diskgenius也可以扩展ebf分区，数据保存镜像（记下uuid？不确定），删除ebf、mbr（windows用来标记用的，里面无内容），然后选择重建erf，save修改。然后导入保存的ebf镜像
 5. 使用diskgenius新增ueif entry,指向oc里的openXXX.
+6. 12代cpu https://chriswayg.gitbook.io/opencore-visual-beginners-guide/advanced-topics/using-alder-lake
 7. https://github.com/osxfuse/osxfuse/wiki/NTFS-3G
 
 ## mouse lag
