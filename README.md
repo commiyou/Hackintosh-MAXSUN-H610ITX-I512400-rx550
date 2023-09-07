@@ -1,5 +1,5 @@
 ## intro
-gpu硬解正常,能睡眠(显示器是关了的,但是没确定是否真的睡眠)&唤醒
+gpu硬解正常,能正常sleep.  hibernate存疑?
 配置参考[知乎 M1 Max Mac Studio 同等性能配置](https://zhuanlan.zhihu.com/p/580506404)
 
 1. [opencore config.plist checker](https://sanitychecker.ocutils.me/)
@@ -19,3 +19,19 @@ gpu硬解正常,能睡眠(显示器是关了的,但是没确定是否真的睡�
 1. 参考 https://github.com/moqsien/hackintosh_p310s_b360_i5_10400f_rx550_lexa/blob/main/files/docs/Readme_CN.md
 2. 其中显卡slot name可以从Hackintool中获取,参考https://www.a7mac.com/1037.html
 3. config.plist中的`boot-args`中要加上`-radcodec` 支持硬解
+
+## 休眠问题
+休眠后只能通过按电源键,鼠标、键盘不行.可能是之前bios设置禁用的问题?
+
+`pmset -g`
+>  Sleep On Power Button 1
+ ttyskeepawake        1
+ hibernatemode        0
+ powernap             0
+ hibernatefile        /var/vm/sleepimage
+ womp                 0
+ displaysleep         15
+ networkoversleep     0
+ sleep                30
+ tcpkeepalive         0
+ disksleep            45
