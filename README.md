@@ -1,5 +1,6 @@
 ## intro
-gpu硬解正常,能正常sleep.  hibernate存疑?
+基于open 0.9.4
+rx550 lexa gpu 硬解正常,能正常sleep.  hibernate存疑?
 配置参考[知乎 M1 Max Mac Studio 同等性能配置](https://zhuanlan.zhihu.com/p/580506404)
 
 1. [opencore config.plist checker](https://sanitychecker.ocutils.me/)
@@ -9,6 +10,10 @@ gpu硬解正常,能正常sleep.  hibernate存疑?
 5. 使用diskgenius新增ueif entry,指向oc里的openXXX.
 6. 12代cpu https://chriswayg.gitbook.io/opencore-visual-beginners-guide/advanced-topics/using-alder-lake
 7. https://github.com/osxfuse/osxfuse/wiki/NTFS-3G
+
+## TODO
+- [ ] 机器可以正常睡眠&唤醒，但是睡眠久了会进入休眠，键鼠无法唤醒，只能按电源键恢复
+- [ ] igpu禁用，但是hackintool 会有??显示，修复
 
 ## mouse lag
 1. `Karabiner-Elements`问题,在`devices`中关闭鼠标对应events的监控即可.
@@ -23,15 +28,17 @@ gpu硬解正常,能正常sleep.  hibernate存疑?
 ## 休眠问题
 休眠后只能通过按电源键,鼠标、键盘不行.可能是之前bios设置禁用的问题?
 
-`pmset -g`
->  Sleep On Power Button 1
- ttyskeepawake        1
- hibernatemode        0
- powernap             0
- hibernatefile        /var/vm/sleepimage
- womp                 0
- displaysleep         15
- networkoversleep     0
- sleep                30
- tcpkeepalive         0
- disksleep            45
+```
+$ pmset -g
+Sleep On Power Button 1
+ttyskeepawake        1
+hibernatemode        0
+powernap             0
+hibernatefile        /var/vm/sleepimage
+womp                 0
+displaysleep         15
+networkoversleep     0
+sleep                30
+tcpkeepalive         0
+disksleep            45
+```
